@@ -1,0 +1,47 @@
+version: '3'
+services:
+  codeServer:
+    container_name: code-server1
+    image: 'lscr.io/linuxserver/code-server'
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - SUDO_PASSWORD=aivoicebox
+    ports:
+      - "8001:8443"
+    restart: always
+    volumes:
+      - "/home/pi/code/config:/config"
+
+  rhasspy:
+    command: "--user-profiles /profiles --profile en"
+    container_name: rhasspy1
+    image: 'rhasspy/rhasspy'
+    ports:
+      - "80:12101"
+      - "1883:12183"
+    restart: always
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "$HOME/.config/rhasspy/profiles:/profiles"
+    devices:
+      - "/dev/snd:/dev/snd"
+
+  portainer:
+    command: '--admin-password ''$$2y$$05$$0aRsEUvmKsAduqEYv7wis.e7o7tTw7BTX0je6aQUdTSMnNTZl8bWe'''
+    container_name: portainer
+    image: 'portainer/portainer:latest'
+    logging:
+      options: {max-size: 5m}
+    ports:
+      - '9000:9000'
+      - '8000:8000'
+    restart: always
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - 'portainer_data:/data'
+
+volumes:
+  portainer_data:
+    external: true
