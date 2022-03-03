@@ -16,8 +16,10 @@ _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
-sudo python3 /home/pi/code/config/aivoicebox/aivoicebox-skills/Light/light.py &
+sudo python3 /home/pi/code/config/aivoicebox/aivoicebox-skills/0_Light/light.py &
 
 gotty -w --address 0.0.0.0 --port 8080 agetty -8 - linux &
+
+sudo python3 /home/pi/code/config/aivoicebox/aivoicebox-skills/0_Distance/distance.py &
 
 exit 0
