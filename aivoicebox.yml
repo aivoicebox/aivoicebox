@@ -1,7 +1,7 @@
 version: '3'
 services:
   codeServer:
-    container_name: code-server1
+    container_name: code-server
     image: 'lscr.io/linuxserver/code-server'
     environment:
       - PUID=1000
@@ -16,7 +16,7 @@ services:
 
   rhasspy:
     command: "--user-profiles /profiles --profile en"
-    container_name: rhasspy1
+    container_name: rhasspy
     image: 'rhasspy/rhasspy'
     ports:
       - "80:12101"
