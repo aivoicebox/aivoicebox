@@ -16,16 +16,17 @@ _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
-sudo python3 /home/pi/aivoicebox-skills/0_Light/light.py &
 
 gotty -w --address 0.0.0.0 --port 8080 agetty -8 - linux &
-
-sudo python3 /home/pi/aivoicebox-skills/0_Distance/distance.py &
 
 docker-compose -f /home/pi/aivoicebox/aivoicebox.yml up -d &
 
 sudo bash /home/pi/init.sh &
 
 sudo wifi-connect -s `cat /etc/hostname` &
+
+sudo python3 /home/pi/aivoicebox-skills/0_Light/light.py &
+
+sudo python3 /home/pi/aivoicebox-skills/0_Distance/distance.py &
 
 exit 0
