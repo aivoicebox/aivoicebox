@@ -21,7 +21,7 @@ services:
     container_name: rhasspy
     image: 'rhasspy/rhasspy'
     ports:
-      - "80:12101"
+      - "4001:12101"
       - "1883:12183"
     restart: always
     volumes:
