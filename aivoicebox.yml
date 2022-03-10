@@ -8,11 +8,13 @@ services:
       - PGID=1000
       - TZ=Asia/Kolkata
       - SUDO_PASSWORD=aivoicebox
+      - DEFAULT_WORKSPACE=/aivoicebox-skills
     ports:
       - "8001:8443"
     restart: always
     volumes:
       - "/home/pi/code/config:/config"
+      - "/home/pi/aivoicebox-skills:/aivoicebox-skills"
 
   rhasspy:
     command: "--user-profiles /profiles --profile en"
