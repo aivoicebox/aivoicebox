@@ -21,7 +21,7 @@ gotty -w --address 0.0.0.0 --port 8080 agetty -8 - linux &
 
 docker-compose -f /home/pi/aivoicebox/aivoicebox.yml up -d &
 
-sudo bash /home/pi/init.sh &
+sudo bash /home/pi/aivoicebox/init.sh &
 
 sudo wifi-connect -s `cat /etc/hostname` &
 
