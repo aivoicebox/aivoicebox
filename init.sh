@@ -11,7 +11,7 @@ else
     then
         echo "Installation Successful"
         echo 1 > $DONE_FILE
-    else 
+    else
         echo "Command installation Unsuccessful"
     fi
 fi
