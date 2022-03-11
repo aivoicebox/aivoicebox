@@ -10,7 +10,7 @@ else
     do
         printf "%c" "."
     done
-    bash <(curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh)
+    yes y | bash <(curl -L https://github.com/balena-io/wifi-connect/raw/master/scripts/raspbian-install.sh)
     sudo bash /home/pi/seeed-voicecard/install.sh
     status=$?
     if [ $status -eq 0 ]
