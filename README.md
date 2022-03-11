@@ -5,7 +5,7 @@
 - cd seeed-voicecard
 - sudo ./install.sh
 - sudo reboot now
-
+- https://svgshare.com/i/f38.svg
 
 Steps
 1. driver install seeed-voicecard https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT_Raspberry/
