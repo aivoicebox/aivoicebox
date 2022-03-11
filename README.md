@@ -1,11 +1,6 @@
 # aivoicebox
 
-- sudo apt-get update
-- git clone https://github.com/respeaker/seeed-voicecard.git
-- cd seeed-voicecard
-- sudo ./install.sh
-- sudo reboot now
-- https://svgshare.com/i/f38.svg
+- cp aivoicebox/logo.svg /usr/local/share/wifi-connect/ui/static/media/logo.34c0c94e.svg
 
 Steps
 1. driver install seeed-voicecard https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT_Raspberry/
