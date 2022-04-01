@@ -10,3 +10,4 @@ Steps
 4. pip install paho-mqtt or pip3 install -r aivoicebox-skills/requirements.txt --user
 5. install gotty https://lindevs.com/install-gotty-on-raspberry-pi/
 6. docker-compose -f aivoicebox/aivoicebox.yml up -d
+7. check rc.local logs command: grep rc.local /var/log/syslog
